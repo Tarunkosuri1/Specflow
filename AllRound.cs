@@ -41,17 +41,17 @@ namespace SpecFlowProject2.Pages
         By breakingwaves = By.XPath("//android.widget.Button[@content-desc=\"TsgNatureSoundsBreakingWaves\"]");
         By allaround = By.XPath("//android.widget.ImageView[@content-desc=\"prg_allaround_m\"]");
 
-        public string GetTitle()
+        public string GetTitle()//verify the title of the page
         {
             return driver.FindElement(verify).Text;
         }
-        public void clicksplit()
+        public void clicksplit()//it is used to split the volume into left and right hi
         {
             
             driver.FindElement(split).Click();
         }
 
-        public void slider1(string value)
+        public void slider1(string value)//it is used to verify if the right hi is in 9
         {
 
              Actions actions = new Actions(driver);
@@ -62,7 +62,7 @@ namespace SpecFlowProject2.Pages
              actions.Release().Perform();
            
         }
-        public void slider2(string values)
+        public void slider2(string values)//It is used to validate left hi is in 9
         {
             Actions actions = new Actions(driver);
             AndroidElement downslide2 = driver.FindElement(slide2);
@@ -73,14 +73,14 @@ namespace SpecFlowProject2.Pages
             actions.Release().Perform();
         }
 
-        public void moveto3(string volume)
+        public void moveto3(string volume)//It is used to set right hi to 3
         {
             Actions action = new Actions(driver);
             AndroidElement slide3 = driver.FindElement(slide1);
             action.ClickAndHold(slide3).Perform();
             action.MoveByOffset(-325, 0).Release().Perform();
         }
-        public void moveto10(String volume)
+        public void moveto10(String volume)//it is used to set left hi to 10
         {
             Actions action = new Actions(driver);
             AndroidElement slide4 = driver.FindElement(slide2);
@@ -88,7 +88,7 @@ namespace SpecFlowProject2.Pages
             action.MoveByOffset(83, 0).Release().Perform();
         }
 
-        public void validate3(string volume)
+        public void validate3(string volume)//used to check if right hi is in 3
         {
             Actions action = new Actions(driver);
             AndroidElement slide3 = driver.FindElement(slide1);
@@ -98,7 +98,7 @@ namespace SpecFlowProject2.Pages
             Assert.AreEqual(act_value, volume);
             action.Release().Perform();
         }
-        public void validate10(String volume)
+        public void validate10(String volume)//used to check if left hi is in 10
         {
             Actions action = new Actions(driver);
             AndroidElement slide4 = driver.FindElement(slide2);
@@ -108,11 +108,11 @@ namespace SpecFlowProject2.Pages
             Assert.AreEqual(actual_value, volume);
             action.Release().Perform();
         }
-        public void merg()
+        public void merg()//used to merge the split 
         {
             driver.FindElement(merge).Click();
         }
-        public void validatehi(string volume)
+        public void validatehi(string volume)//used to validate if the volume is 3 after merging
         {
             Actions action = new Actions(driver);
             AndroidElement slide = driver.FindElement(slider);
@@ -122,13 +122,13 @@ namespace SpecFlowProject2.Pages
             Assert.AreEqual(actual_value, volume);
             action.Release().Perform();
         }
-        public void volume13(String volume)
+        public void volume13(String volume)//used to set the volume to 13
         {
             Actions action = new Actions(driver);
             AndroidElement slide = driver.FindElement(slider);
-            action.ClickAndHold(slide).MoveByOffset(280, 0).Perform();
+            action.ClickAndHold(slide).MoveByOffset(570, 0).Perform();
         }
-        public void validate13(String volume)
+        public void validate13(String volume)//used to validate if the volume is in 13
         {
             Actions action = new Actions(driver);
             AndroidElement slide = driver.FindElement(slider);
@@ -137,66 +137,47 @@ namespace SpecFlowProject2.Pages
             Assert.AreEqual(actual_value, volume);
             action.Release().Perform();
         }
-        public void Speechclarity(string p0)
+        public void Speechclarity(string p0)//used to click speech clarity
         {
             driver.FindElement(speechclarity).Click();
         }
-        public void validateSpeechclarity(string p0)
+        public void validateSpeechclarity(string p0)//used to validate if speech clarity is enabled
         {
 
             AndroidElement speech = driver.FindElement(speechclarity);
             bool isClicked = speech.Selected;
 
-            Assert.IsTrue(isClicked, "Button is clicked");
+            Assert.IsTrue(isClicked, "speech clarity is enabled");
 
 
         }
 
-        public void Noisefilter(string p0)
+        public void Noisefilter(string p0)//used to click noise filter
         {
             driver.FindElement(noisefilter).Click();
         }
 
-        public void validatenoisefilter(string p0)
+        public void validatenoisefilter(string p0)//used to validate if noise filter is enabled
         {
             AndroidElement noise = driver.FindElement(noisefilter);
 
             bool isClicked = noise.Selected;
 
-            Assert.IsTrue(isClicked, "Button is clicked");
+            Assert.IsTrue(isClicked, "noise filter is enabled");
 
         }
-        public void disablespeechclarity(string p0)
+        public void disablespeechclarity(string p0)//used to check if speech clarity is disabled
         {
             AndroidElement speech = driver.FindElement(speechclarity);
             bool isClicked = !speech.Selected;
 
-            Assert.IsTrue(isClicked, "Button is clicked");
-        }
-        public void Speechclarity1(string p0)
-        {
-            driver.FindElement(speechclarity).Click();
-        }
-        public void disablenoisefilter(string p1)
-        {
-            AndroidElement noise = driver.FindElement(noisefilter);
-
-            bool isClicked = !noise.Selected;
-
-            Assert.IsTrue(isClicked, "Button is clicked");
-        }
-        public void validateSpeechclarity1(string p0)
-        {
-
-            AndroidElement speech = driver.FindElement(speechclarity);
-            bool isClicked = speech.Selected;
-
-            Assert.IsTrue(isClicked, "Button is clicked");
-
-
+            Assert.IsTrue(isClicked, "speech clarity is disabled");
         }
 
-        public void Bass(String p0)
+
+        
+
+        public void Bass(String p0)//used to set bass to 4
         {
             TouchAction touchAction = new TouchAction(driver);
             AndroidElement BASS = driver.FindElement(bass);
@@ -207,7 +188,7 @@ namespace SpecFlowProject2.Pages
                        .Perform();
 
         }
-        public void middlegain(String p0)
+        public void middlegain(String p0)//used to set middle gain to -3
         {
             TouchAction touchAction = new TouchAction(driver);
             AndroidElement GAIN = driver.FindElement(Middlegain);
@@ -217,7 +198,7 @@ namespace SpecFlowProject2.Pages
                        .Perform();
 
         }
-        public void treblegain(String p0)
+        public void treblegain(String p0)//used to set treblegain to  5
         {
             TouchAction touchAction = new TouchAction(driver);
             AndroidElement TREBLE = driver.FindElement(Treblegain);
@@ -227,7 +208,7 @@ namespace SpecFlowProject2.Pages
                        .Perform();
 
         }
-        public void validatebass(String bassgain)
+        public void validatebass(String bassgain)//used to validate if bass is 4
         {
             Actions action = new Actions(driver);
             AndroidElement BASS = driver.FindElement(bass);
@@ -236,7 +217,7 @@ namespace SpecFlowProject2.Pages
             Assert.AreEqual(actual_value, bassgain);
         }
 
-        public void validatemiddlegain(String gain)
+        public void validatemiddlegain(String gain)//used to validate if middlegain is -3
         {
 
             Actions action = new Actions(driver);
@@ -246,7 +227,7 @@ namespace SpecFlowProject2.Pages
             Assert.AreEqual(actual_value, gain);
         }
 
-        public void validatetreble(String treble)
+        public void validatetreble(String treble)//to validate if treble is 5
         {
             Actions action = new Actions(driver);
             AndroidElement TREBLE = driver.FindElement(Treblegain);
@@ -256,7 +237,7 @@ namespace SpecFlowProject2.Pages
         }
 
 
-        public void waves(string calm, string breaking)
+        public void waves(string calm, string breaking)//used to click on calm and breaking wave
         {
             AndroidElement wave = driver.FindElement(calmingwaves);
             wave.Click();
@@ -264,7 +245,7 @@ namespace SpecFlowProject2.Pages
             breakingwave.Click();
         }
 
-        public void allaroundclick(string p0)
+        public void allaroundclick(string p0)//used to click on allaround on topribbon
         {
             driver.FindElement(allaround).Click();
         }
