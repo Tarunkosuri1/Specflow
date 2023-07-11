@@ -31,7 +31,6 @@ namespace SpecFlowProject2.Hooks
             appiumOptions.AddAdditionalCapability("Appium Server Address", "127.0.0.1:4723");
             appiumOptions.AddAdditionalCapability("app", "C:\\Users\\iray\\Desktop\\smart3d\\dk.resound.smart3d-Signed.apk");
             appiumOptions.AddAdditionalCapability("appPackage", "dk.resound.smart3d");
-            //appiumOptions.AddAdditionalCapability("appActivity", "crc644480832bc8628b4d.MainActivity");
             var httpClient = new HttpClient();
             httpClient.Timeout = TimeSpan.FromSeconds(120);
             var commandExecutor = new HttpCommandExecutor(new Uri("http://localhost:4723/wd/hub"),TimeSpan.FromSeconds(120));
