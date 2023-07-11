@@ -22,7 +22,7 @@ namespace SpecFlowProject2.Support
         By SwipeLeft = By.XPath(" (//android.view.View[@index='0'])[2]");
         By verify = By.Id("dk.resound.smart3d:id/card_title");
 
-        public void swipe(string p0)
+        public void swipe(string p0)//for swiping program cards
         {
             
                 AndroidElement screenSize = driver.FindElement(SwipeLeft);
@@ -34,7 +34,7 @@ namespace SpecFlowProject2.Support
                 AndroidElement swipeleft = driver.FindElement(SwipeLeft);
                 action.Press(screenWidth, y).MoveTo(endX, y).Release().Perform();
         }
-        public void Soundenhancer(string p0)
+        public void Soundenhancer(string p0)//for clicking soundenhancer
         {
             
                 AndroidElement soundenhancer = driver.FindElement(By.XPath("//android.widget.TextView[@content-desc=\"HomeButtonLabelFineTune\"]"));
@@ -42,7 +42,7 @@ namespace SpecFlowProject2.Support
            
         }
 
-        public void tinnitus(String p0)
+        public void tinnitus(String p0)//for clicking tinnitus manager
         {
 
           
@@ -50,14 +50,14 @@ namespace SpecFlowProject2.Support
                 tinnnitus.Click();
            
         }
-        public void Exit(String p0)
+        public void Exit(String p0)//for clicking on exit 
         {
             
 
                 AndroidElement exit = driver.FindElement(By.XPath("//android.widget.ImageView[@content-desc=\"icon_close_m\"]"));
                  exit.Click();
         }
-        public string Title()
+        public string Title()//for validating title
         {
             return driver.FindElement(verify).Text;
         }
