@@ -19,7 +19,7 @@ namespace SpecFlowProject2.Pages
         }
         By clickdemo =By.Id("dk.resound.smart3d:id/demo_button");
         
-        public popuppage demomode()
+        public popuppage demomode()//clicks on take me to demo mode
         {
             driver.FindElement(clickdemo).Click();
             return new popuppage(driver);

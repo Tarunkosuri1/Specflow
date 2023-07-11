@@ -22,22 +22,22 @@ namespace SpecFlowProject2.Pages
         By slightvariation = By.XPath("//android.widget.Button[@content-desc=\"TsgWhiteNoiseVariationsSlight\"]");
         By reset = By.XPath("//android.widget.TextView[@content-desc=\"FineTuneButtonReset\"]");
         By hearinnoise = By.XPath("//android.widget.ImageView[@content-desc=\'prg_hearinnoise_m\']");
-        public string getTitle()
+        public string getTitle()//validate title
         {
             return driver.FindElement(noise).Text;
         }
-        public void whitenoise(String p0)
+        public void whitenoise(String p0)//click on slightvariation
         {
             AndroidElement Slightvariation= driver.FindElement(slightvariation);
             Slightvariation.Click();
         }
-        public void Reset(String p0)
+        public void Reset(String p0)//click on reset
         {
 
             AndroidElement RESET = driver.FindElement(reset);
             RESET.Click();
         }
-        public void hearinnoiseclick(string p0)
+        public void hearinnoiseclick(string p0)//click on hearinnoise on top ribbon
         {
             driver.FindElement(hearinnoise).Click();
         }

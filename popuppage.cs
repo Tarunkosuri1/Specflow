@@ -20,7 +20,7 @@ namespace SpecFlowProject2.Pages
         By yes = By.ClassName("android.view.ViewGroup");
         By ok = By.ClassName("android.widget.TextView");
 
-        public void popup()
+        public void popup()//used to handle popups
         {
             if (driver.FindElementByClassName("android.view.ViewGroup").Displayed)
             {

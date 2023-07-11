@@ -20,7 +20,7 @@ namespace SpecFlowProject2.Pages
         }
         By music = By.XPath("//android.widget.ImageView[@content-desc='prg_music_m']");
 
-        public void musicclick(String p0)
+        public void musicclick(String p0)//to click on music on top ribbon
         {
             driver.FindElement(music).Click();  
         }
