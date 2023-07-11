@@ -17,12 +17,12 @@ using SpecFlowProject2.Support;
 
 namespace SpecFlowProject2.Pages
 {
-    public class AllRound : programcards
+    public class AllRound : programcards//Define a class named "Outdoor" which inherits from the "programcards" class
 
     {
-        private AppiumDriver<AndroidElement> driver;
+        private AppiumDriver<AndroidElement> driver;// Declare a private field named "driver" of type "AppiumDriver<AndroidElement>"
 
-        public AllRound(AppiumDriver<AndroidElement> driver) : base(driver)
+        public AllRound(AppiumDriver<AndroidElement> driver) : base(driver)// Define a constructor which has "AppiumDriver<AndroidElement>" parameter and calls the base class constructor
         {
             this.driver = driver;
         }

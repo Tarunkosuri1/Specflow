@@ -12,11 +12,11 @@ using NUnit.Framework;
 
 namespace SpecFlowProject2.Pages
 {
-    public class Outdoor : programcards
+    public class Outdoor : programcards// Define a class named "Outdoor" which inherits from the "programcards" class
     {
-        private AppiumDriver<AndroidElement> driver;
+        private AppiumDriver<AndroidElement> driver;// Declare a private field named "driver" of type "AppiumDriver<AndroidElement>"
 
-        public Outdoor(AppiumDriver<AndroidElement> driver) : base(driver)
+        public Outdoor(AppiumDriver<AndroidElement> driver) : base(driver)// Define a constructor which has "AppiumDriver<AndroidElement>" parameter and calls the base class constructor 
         {
             this.driver = driver;
         }
