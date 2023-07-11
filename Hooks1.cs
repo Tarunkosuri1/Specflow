@@ -14,9 +14,9 @@ namespace SpecFlowProject2.Hooks
        
        
         private AppiumDriver<AndroidElement> driver;
-        private readonly IObjectContainer _container;
+        private readonly IObjectContainer _container;//declares a private field named _container of type IObjectContainer
 
-        public Hooks1(IObjectContainer container)
+        public Hooks1(IObjectContainer container)//iobject container allows sharing of objects within specflow scenarios ,Constructor for the "Hooks1" class which takes an "IObjectContainer" parameter
         {
             _container = container;
         }
@@ -35,7 +35,7 @@ namespace SpecFlowProject2.Hooks
             httpClient.Timeout = TimeSpan.FromSeconds(120);
             var commandExecutor = new HttpCommandExecutor(new Uri("http://localhost:4723/wd/hub"),TimeSpan.FromSeconds(120));
             var driver = new AndroidDriver<AndroidElement>(commandExecutor, appiumOptions);
-            _container.RegisterInstanceAs<AppiumDriver<AndroidElement>>(driver);
+            _container.RegisterInstanceAs<AppiumDriver<AndroidElement>>(driver);//This allows other parts of the code to access and use the registered driver instance 
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
            
 
